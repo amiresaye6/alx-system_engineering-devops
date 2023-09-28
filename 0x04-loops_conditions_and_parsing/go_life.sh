@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "end of mandatory :)"
+git commit -m "advansed #1 :)"
 git push
