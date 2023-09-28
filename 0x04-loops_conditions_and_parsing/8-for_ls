@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# for ls in ls :)
+names=$(ls)
+for item in $names
+do
+    echo "$item"
+done
