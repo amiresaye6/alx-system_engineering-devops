@@ -3,5 +3,9 @@
 names=$(ls)
 for item in $names
 do
-    echo "$item"
+    if [ -f "$item" ]
+    then
+        part_after_dash="${item#*-}"
+        echo "$part_after_dash"
+    fi
 done
