@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #nonesenese
-trap "I am invincible!!!" SIGTERM
+trap "echo I am invincible!!!" SIGTERM
 
 while true; do
-    echo "To infinity and beyond"
-    sleep 2
-done
+  echo "To infinity and beyond"
+  sleep 2
+done;
