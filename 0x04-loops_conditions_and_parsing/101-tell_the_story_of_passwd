@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
 # defalt comment for score
+file_path="/etc/passwd"
+
+# Read the file line by line
+while IFS=: read -r username uid home; do
+    echo "Username: $username"
+    echo "User ID: $uid"
+    echo "Home Directory: $home"
+done < "$file_path"
