@@ -2,5 +2,5 @@
 #github commands in one click
 
 git add .
-git commit -m "init :)"
+git commit -m "ruby test task 1 :)"
 git push
