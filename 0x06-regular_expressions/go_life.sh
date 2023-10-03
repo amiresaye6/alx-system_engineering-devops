@@ -2,5 +2,5 @@
 #github commands in one click
 
 git add .
-git commit -m "check until task 3 :)"
+git commit -m "End Of Mandatory"
 git push
