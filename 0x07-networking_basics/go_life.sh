@@ -2,5 +2,5 @@
 #github commands in one click
 
 git add .
-git commit -m "advanced conquerer"
+git commit -m "solve up to #3"
 git push
