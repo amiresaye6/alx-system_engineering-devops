@@ -1,5 +1,7 @@
 # Understanding Localhost, 0.0.0.0, /etc/hosts, and Network Interfaces
+
 ![Alt text](local_host.png)
+
 ## What is localhost/127.0.0.1?
 
 `localhost` or `127.0.0.1` is a special network address used to refer to the current device or computer itself. It is commonly known as the "loopback address." When you access `localhost` or `127.0.0.1` in a web browser or any network application, you are connecting to your own machine. It is often used for testing and development purposes, allowing you to run server applications locally.
