@@ -24,4 +24,3 @@ You can use the `ifconfig` or `ip` command to display active network interfaces.
 ifconfig
 # or
 ip a
-
