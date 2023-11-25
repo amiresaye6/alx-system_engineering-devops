@@ -1,0 +1,6 @@
+HOST ubuntu
+ HostName 100.25.204.148
+ IdentityFile ~/.ssh/school
+ PreferredAuthentications publickey
+ PasswordAuthentication no
+~                              
