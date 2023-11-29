@@ -1,0 +1,8 @@
+total 0
+drwxr-xr-x 1 root root 4096 Nov 29 20:51 .
+drwxr-xr-x 1 root root 4096 Nov 28 19:09 ..
+-rw-r--r-- 1 root root  200 Nov 24 19:20 0-create_a_file.pp
+-rw-r--r-- 1 root root   92 Nov 29 15:39 1-install_a_package.pp
+-rw-r--r-- 1 root root  156 Nov 24 19:31 2-execute_a_command.pp
+-rw-r--r-- 1 root root   29 Nov 24 19:27 README.md
+-rw-r--r-- 1 root root    0 Nov 29 20:51 list.txt
