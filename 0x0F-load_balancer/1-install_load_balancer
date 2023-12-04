@@ -29,6 +29,10 @@ backend amir-backend
 "
 echo "$content" >> /etc/haproxy/haproxy.cfg
 
+#enable HAProxy to be started by the init script.
+
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
 #restarting haproxy
 
 sudo service haproxy restart
