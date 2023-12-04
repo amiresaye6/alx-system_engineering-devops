@@ -1,0 +1,49 @@
+this file is my notes about the consept of load balancing:
+frontend is every thign from the client until the proxy.
+backend is every thing from the proxy until the database.
+to open any of alx servers use this command
+>> ssh -i ~/.ssh/school ubuntu@IP_address
+
+to install HAProxy
+
+Connect to my server through SSH
+>> ssh -i ~/.ssh/school ubuntu@100.25.204.148
+
+Check the version of Ubuntu that was running on my server
+>> lsb_release -a
+
+Get the specific HAProxy package for your version of Ubuntu
+
+Instructions for the latest release
+You need to enable a dedicated PPA with the following command:
+
+>> apt-get install --no-install-recommends software-properties-common
+>> add-apt-repository ppa:vbernat/haproxy-2.8
+
+Then, use the following command:
+
+>> apt-get install haproxy=2.8.\*
+You will get the latest release of HAProxy 2.8 (and stick to this branch).
+
+Configure HAProxy to share requests between two servers
+
+we will need to make this config file:
+
+frontend  amir-frontend
+        bind *:80
+        mode http
+        default_backend amir-backend
+backend amir-backend
+        balance roundrobin
+        server web-01 100.25.204.148:80 check
+        server web-02 54.210.1.39:80 check
+
+use this command
+>> sudo vim /etc/haproxy/haproxy.cfg
+and this to make a backub
+>>sudo cp -a /etc/haproxy/haproxy.cfg{,.original_copy}
+
+enable HAProxy to be started by the init script.
+>> echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+Restart HAProxy
+>> sudo service haproxy restart
