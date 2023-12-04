@@ -35,8 +35,8 @@ frontend  amir-frontend
         default_backend amir-backend
 backend amir-backend
         balance roundrobin
-        server web-01 100.25.204.148:80 check
-        server web-02 54.210.1.39:80 check
+        server 336631-web-01 100.25.204.148:80 check
+        server 336631-web-02 54.210.1.39:80 check
 
 use this command
 >> sudo vim /etc/haproxy/haproxy.cfg
