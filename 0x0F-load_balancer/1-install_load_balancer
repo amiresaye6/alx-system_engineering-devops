@@ -1,39 +1,31 @@
 #!/usr/bin/env bash
-# install and congiver HAProxy load balancer
+# Install and configure HAProxy load balancer
 
-# installation steps
-
+# Installation steps
 sudo apt-get update
-
 sudo apt-get install --no-install-recommends software-properties-common -y
-
 sudo add-apt-repository ppa:vbernat/haproxy-2.8 -y
+sudo apt-get install haproxy=2.8.* -y
 
-sudo apt-get install haproxy=2.8.\* -y
-
-#take a backub of the configuration file
-
+# Take a backup of the configuration file
 sudo cp -a /etc/haproxy/haproxy.cfg{,.original_copy}
 
-#editing config file
-
+# Editing config file
 content="\
-frontend  amir-frontend
-        bind *:80
-        mode http
-        default_backend amir-backend
+frontend amir-frontend
+    bind *:80
+    mode http
+    default_backend amir-backend
 backend amir-backend
-        balance roundrobin
-        mode http
-        server 336631-web-01 100.25.204.148:80 check
-        server 336631-web-02 54.210.1.39:80 check
+    balance roundrobin
+    mode http
+    server 336631-web-01 100.25.204.148:80 check
+    server 336631-web-02 54.210.1.39:80 check
 "
-echo "$content" >> /etc/haproxy/haproxy.cfg
+echo "$content" | sudo tee -a /etc/haproxy/haproxy.cfg >/dev/null
 
-#enable HAProxy to be started by the init script.
+# Enable HAProxy to be started by the init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy >/dev/null
 
-echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
-
-#restarting haproxy
-
+# Restarting HAProxy
 sudo service haproxy restart
