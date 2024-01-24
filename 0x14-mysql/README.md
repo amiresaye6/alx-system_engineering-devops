@@ -49,3 +49,4 @@ holberton_user has permission to check the primary/replica status of your databa
 
     mysql> FLUSH PRIVILEGES;
     ```
+for more infor https://www.youtube.com/watch?v=bJTSFMXk5AM
