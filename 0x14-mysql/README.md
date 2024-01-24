@@ -38,3 +38,14 @@ This guide provides step-by-step instructions for installing MySQL 5.7.x on Ubun
 - Ensure that your system meets the [MySQL 5.7 system requirements](https://dev.mysql.com/doc/refman/5.7/en/requirements.html).
 
 - For security best practices, consider configuring a firewall and limiting access to your MySQL server.
+
+## Adding new mysql user
+holberton_user has permission to check the primary/replica status of your databases.
+
+```bash
+    mysql> CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+
+    mysql> GRANT GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
+
+    mysql> FLUSH PRIVILEGES;
+    ```
